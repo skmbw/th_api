@@ -1,0 +1,213 @@
+.logo {
+	width: 93.5%;
+	margin: 0 auto;
+	padding: .15rem 0 .1rem 0;
+	border-bottom: 1px solid #e6e6e6;
+}
+.logo img {
+	width: .5875rem;
+	height: .5875rem;
+}
+.logo .texts {
+	position: relative;
+	float: right;
+	width: 78%;
+	height: .5875rem;	
+	color: #333;
+}
+.texts .name{
+	display: inline-block;
+	height: .25rem;
+	line-height: .25rem;
+	vertical-align: middle;
+	font-size: 1.15em;
+}
+.texts .status {
+	margin-left: .05rem;
+  font-size: .7em;
+  vertical-align: middle;
+  text-align: center;
+  color: #3d81ff;
+  padding: 0 .04rem;
+  border: 1px solid #3d81ff;
+  border-radius: 2px;
+}
+.texts .comment {
+	height: .1rem;	
+}
+.comment.star1 {
+  background: url(../images/icon_start1.png) no-repeat left center;
+  background-size: .087rem;
+}
+.comment.star2 {
+  background: url(../images/icon_start2.png) no-repeat left center;
+  background-size: .2rem;
+}
+.comment.star3 {
+  background: url(../images/icon_start3.png) no-repeat left center;
+  background-size: .313rem;
+}
+.comment.star4 {
+  background: url(../images/icon_start4.png) no-repeat left center;
+  background-size: .426rem;
+}
+.comment.star4half {
+	background: url(../images/icon_start4.5.png) no-repeat left center;
+	background-size: .516rem;
+}
+
+.texts .earning {
+	position: absolute;
+	left: 0;
+	margin-top: .04rem;
+}
+.texts .fl {
+  font-size: .8em;
+  color: #999;
+}
+.texts .f-x {
+	height: .1375rem;
+	color: #ff493f;
+	font-size: 1.5em;
+}
+.title-txt {
+	width: 93.5%;
+  margin: 0 auto;
+  padding: .1rem 0 .05rem 0;
+}
+.title-txt .title {
+	font-size: .8em;
+  color: #999;
+}
+.title-txt .content {
+  font-size: 1em;
+  color: #333;
+}
+.title-txt .content .item.yellow{
+	color: #ffa801;
+	font-size: 1.15em;
+	line-height: 21px;
+}
+.title-txt .item {
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+.block-empty {
+	width: 100%;
+	height: .13rem;
+	background-color: #fafafa;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+}
+.block-item {
+	width: 100%;
+}
+#chart {
+	margin: 0 auto;
+}
+.block-item .block-title {
+	height: .358rem;
+	margin-left: 3.25%;
+  padding-left: .2rem;
+  font-size: 1.1em;
+	line-height: .358rem;
+	border-bottom: 1px solid #e6e6e6;
+}
+.block-item .chart-title {
+	width: 93.5%;
+	margin: .1rem auto 0;
+	color: #ffa801;
+	font-size: .7em;
+	text-align: right;
+}
+.chart-title div:nth-child(2) {
+	font-size: 1.45em;
+}
+.block-item .chart-choice {
+	width: 93.5%;
+	height: .291rem;
+	margin: 0 auto;
+}
+.block-item .chart-choice .item {
+	float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  color: #999;
+}
+.block-item .chart-choice .item.active {
+  color: #ffa801;
+  background: -moz-linear-gradient(top, #fff 0%, #ffeecd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fff 0%, #ffeecd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fff 0%, #ffeecd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.block-item.yellow .block-title { 
+	background: url(../images/icon_detail_yelow.png) no-repeat left center;
+	background-size: .138rem .138rem;
+}
+.block-item.red .block-title { 
+  background: url(../images/icon_detail_red.png) no-repeat left center;
+  background-size: .138rem .138rem;
+}
+.block-item.blue .block-title { 
+  background: url(../images/icon_detail_blue.png) no-repeat left center;
+  background-size: .138rem .138rem;
+}
+.block-line {
+	margin-left: 3.25%;
+	border-bottom: 1px solid #e6e6e6;
+}
+.block-line.last {
+	border: none;
+}
+.block-line .item {
+	float: left;
+	width: 24.8%;
+	height: .33rem;
+	line-height: .33rem;
+	text-align: left;
+	color: #999;
+}
+.block-line .item:nth-child(2n) {
+	color: #333;
+	text-align: right;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+.block-line .item:nth-child(2) { border-right: 1px solid #e6e6e6; }
+.block-line .item:nth-child(2n) { 
+	width: 21.7%;
+	padding-right: 3.25%; 
+}
+.block-line .item:nth-child(3) { 
+	width: 21.7%;
+  padding-left: 3.25%; 
+}
+.block-item .thead,
+.block-item .tbody {
+	width: 93.5%;
+	margin: 0 auto;
+}
+.block-item .thead .item,
+.block-item .tbody .tb {
+	float: left;
+	width: 33%;
+	height: .29rem;
+	line-height: .29rem;
+	font-size: .92em;
+	text-align: center;
+}
+.block-item .thead {
+	padding-top: .067rem;
+	color: #999;
+}
+.block-item .tbody .tr {
+	background-color: #f0f8ff;
+	border-bottom: 2px solid #fff;
+}
+.block-item .tbody .tb:nth-child(3) {
+	color: #50a6f0;
+	font-size: 1.1em;
+}

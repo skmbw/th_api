@@ -1,0 +1,20 @@
+.btn.phone {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	max-width: 480px;
+	height: .367rem;
+	line-height: .367rem;
+	font-size: 1.2em;
+	color: #fff;
+	text-align: center;
+	background-color: rgba(254,176,25,.9);
+	background-image: url(../images/icon_btn_phone.png);
+	background-repeat: no-repeat;
+	background-position: 33% 45%;
+	background-size: .167rem;
+}
+.texts {
+	font-size: 12px;
+	color: #999;
+}

@@ -456,7 +456,7 @@ li {
 }
 
 /*禁用手机浏览器的用户选择功能*/
-.btn {
+/* .btn {
 	pointer-events: none;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -465,7 +465,7 @@ li {
 	    -ms-user-select: none;
 	        user-select: none;
 	onselectstart: return false;
-}
+} */
 input[type="file"] {
   opacity: 0;
   filter: alpha(opacity=0);

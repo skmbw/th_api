@@ -16,15 +16,17 @@
 	<section class="container">
     <h1>${model.title}</h1>
     <p class="texts">
-      <span class="from-txt">来源：${model.source}</span>
+    <c:if test="${!empty model.source}"><span class="from-txt">来源：${model.source}</span></c:if>
       <span>&nbsp;</span>
       <fmt:formatDate value="${model.createTime}" pattern="yyyy-M-d HH:mm:ss" />
     </p>
+    
 		<div class="rich-text" id="rich-text">
 			${model.info}
 			${model.content}
 		</div>
-		<div class="btn phone"><a href="tel:${mobile}">拨打电话</a></div>
+		<c:if test="${!empty mobile}"><div class="btn phone"><a href="tel:${mobile}">拨打电话</a></div></c:if>
+		
 	</section>
 
 	<jsp:include page="com/footer-js.jsp"></jsp:include>

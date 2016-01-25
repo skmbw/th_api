@@ -105,7 +105,7 @@ public class NewsAction extends GenericAction<News> {
 			return json;
 		}
 	}
-	
+
 	/**
 	 * 跳转详情页面页面
 	 * 
@@ -114,7 +114,8 @@ public class NewsAction extends GenericAction<News> {
 	 * @return 编辑页面
 	 */
 	@RequestMapping("/share/{newsId}/{employeeId}")
-	public String detail(@PathVariable("newsId") String newsId, @PathVariable("employeeId") String employeeId,Map<String, Object> maps) {
+	public String detail(@PathVariable("newsId") String newsId,
+			@PathVariable("employeeId") String employeeId, Map<String, Object> maps) {
 		try {
 			News model = new News();
 			model = newsServiceImpl.get(newsId);
@@ -123,19 +124,21 @@ public class NewsAction extends GenericAction<News> {
 				model.setTitle("没有该新闻！");
 				model.setContent("如有疑问，请联系管理员。。。");
 				maps.put("model", model);
-			}else if (model.getState() == null || model.getState() == 0) {
+			} else if (model.getState() == null || model.getState() == 0) {
 				model = new News();
 				model.setTitle("这条新闻已过期！");
 				model.setContent("如有疑问，请联系管理员。。。");
 				maps.put("model", model);
-			}else {
+			} else {
 				maps.put("model", model);
-				Employee employee = employeeServiceImpl.get(employeeId);
-				String mobile = null;
-				if (employee != null) {
-					mobile = employee.getMobile();
+				if (model.getTypeApp() == 2) {
+					Employee employee = employeeServiceImpl.get(employeeId);
+					String mobile = null;
+					if (employee != null) {
+						mobile = employee.getMobile();
+					}
+					maps.put("mobile", mobile);
 				}
-				maps.put("mobile", mobile);
 			}
 		} catch (Exception e) {
 			LOGGER.error("edit record detail, errorMsg=[{}].", e.getMessage());

@@ -4,7 +4,7 @@
 <!doctype html>
 <html>
 <head>
-<title>私募基金1号</title>
+<title>${product.briefName }</title>
 <jsp:include page="com/meta.jsp"></jsp:include>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/wap/css/detail.css" />
 </head>
@@ -15,7 +15,7 @@
  
   <section class="container">
     <div class="logo">
-      <img alt=""  src="<%=request.getContextPath()%>/wap/images/icon_title_pic.png">
+      <img alt=""  src="${imagePrefix}${product.thumbnail}">
       <div class="texts">
         <div class="name">${product.briefName }
         <em class="status">
@@ -49,9 +49,9 @@
     <div class="block-empty"></div>
     <div class="block-item yellow">
       <div class="block-title">基金业绩</div>
-      <div class="chart-title">
-        <div>时间：<em id="currentTime" class="time">2015-03-01</em></div>
-        <div>单位净值：<em id="currentNet" class="data">1.0000</em></div>
+      <div id="showCurrentNet" class="chart-title" style="display:none">
+        <div>时间：<em id="currentTime" class="time"></em></div>
+        <div>单位净值：<em id="currentNet" class="data"></em></div>
       </div>
       <div id="chart" style="width: 100%; height: 2rem;"></div>
       <div id="chartItems" class="chart-choice">
@@ -68,13 +68,13 @@
         <div class="item">基金规模</div>
         <div class="item right"><fmt:formatNumber value="${product.scale/10000 }" type="currency" pattern="#"/>万元</div>
         <div class="item">递增金额</div>
-        <div class="item right"><fmt:formatNumber value="${product.increaseAmount }" type="currency" pattern="#"/>元</div>
+        <div class="item right"><fmt:formatNumber value="${product.increaseAmount/10000 }" type="currency" pattern="#"/>万元</div>
       </div>
       <div class="block-line last clearfix">
         <div class="item">托管银行</div>
-        <div class="item right">${product.fundTrustee }</div>
+        <div class="item right">${product.bankDeposit }</div>
         <div class="item">认购费率</div>
-        <div class="item right"><fmt:formatNumber value="${product.subFee }" type="currency" pattern="#0.000#"/>%</div>
+        <div class="item right"><fmt:formatNumber value="${product.subFee*100 }" type="currency" pattern="#0.00#"/>%</div>
       </div>
     </div>
     <div class="block-empty"></div>
@@ -114,6 +114,9 @@ function createCharts(){
         	if(data.code==1){
         		$("#currentTime").html(data.data.netDate[data.data.netDate.length-1]);
         		$("#currentNet").html(data.data.netData[data.data.netData.length-1]);
+        		if(data.data.netData[data.data.netData.length-1]){
+        			$("#showCurrentNet").css("display","");
+        		}
         		
         		$('#chart').highcharts({
         	        chart: {
